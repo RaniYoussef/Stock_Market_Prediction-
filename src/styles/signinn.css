@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #B7CEFA;
+}
+
+.container {
+    display: flex;
+    width: 900px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    width: 40%;
+    background-color: #B7CEFA;
+    padding: 50px;
+    color: #184B45;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.right-section {
+    width: 60%;
+    padding: 40px;
+    position: relative;
+}
+
+.login-box {
+    text-align: center;
+}
+
+.logo {
+    width: 60px;
+}
+/*signin label*/
+h2 {
+    color: #1E50AF;
+    font-style: bold;
+    margin-bottom: 30px;
+    font-size: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*email&password label*/
+label {
+    font-weight: bold;
+    text-align: left;
+}
+/*text for email&pass*/
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/*Sign in Button*/
+button {
+    background-color: #184B45;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+/*Dont have an account*/
+p {
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+p a {
+    color: #184B45;
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup-button {
+    display: block;
+    background-color: #184B45;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    width: 80px;
+    margin: 10px auto;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.signup-button:hover {
+    background-color: #136C57;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
