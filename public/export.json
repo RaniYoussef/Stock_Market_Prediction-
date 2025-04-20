@@ -1,0 +1,119 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john@example.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "email": "nouranyousri03@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "email": "ramiiyousri03@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "email": "newuser@example.com",
+      "balance": "13006.0",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "email": "nouran@yahoo.com",
+      "balance": "0.0",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "email": "rowanyousri@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 9,
+      "email": "raniyoussef@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "Tesla",
+      "stock_price": "250.5"
+    },
+    {
+      "id": 2,
+      "name": "testcompany",
+      "stock_price": "10000.0"
+    },
+    {
+      "id": 3,
+      "name": "talaat moustafa",
+      "stock_price": "100.5"
+    }
+  ],
+  "trades": [
+    {
+      "id": 1,
+      "user_id": 5,
+      "company_id": 1,
+      "stock_quantity": 10,
+      "price_per_stock": "250.5",
+      "transaction_type": "buy",
+      "created_at": "2025-04-20T10:56:38.704Z"
+    },
+    {
+      "id": 2,
+      "user_id": 5,
+      "company_id": 1,
+      "stock_quantity": 11,
+      "price_per_stock": "250.5",
+      "transaction_type": "sell",
+      "created_at": "2025-04-20T10:58:48.974Z"
+    },
+    {
+      "id": 3,
+      "user_id": 5,
+      "company_id": 1,
+      "stock_quantity": 11,
+      "price_per_stock": "250.5",
+      "transaction_type": "sell",
+      "created_at": "2025-04-20T11:02:16.569Z"
+    },
+    {
+      "id": 4,
+      "user_id": 6,
+      "company_id": 1,
+      "stock_quantity": 10,
+      "price_per_stock": "250.5",
+      "transaction_type": "buy",
+      "created_at": "2025-04-20T13:02:53.105Z"
+    },
+    {
+      "id": 5,
+      "user_id": 6,
+      "company_id": 1,
+      "stock_quantity": 10,
+      "price_per_stock": "250.5",
+      "transaction_type": "sell",
+      "created_at": "2025-04-20T13:09:17.722Z"
+    },
+    {
+      "id": 6,
+      "user_id": 6,
+      "company_id": 2,
+      "stock_quantity": 1,
+      "price_per_stock": "10000.0",
+      "transaction_type": "buy",
+      "created_at": "2025-04-20T13:10:16.631Z"
+    }
+  ]
+}

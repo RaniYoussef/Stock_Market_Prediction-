@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: Nowara
+  host: localhost
+  
+development:
+  <<: *default
+  database: money_money_development
+
+test:
+  <<: *default
+  database: money_money_test
+
+production:
+  <<: *default
+  database: money_money_production
+  username: money_money
+  password: <%= ENV["MONEY_MONEY_DATABASE_PASSWORD"] %>
