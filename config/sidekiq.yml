@@ -1,0 +1,6 @@
+:concurrency: 5
+:schedule:
+  update_stock_prices:
+    every: ["1m"]
+    class: UpdateStockPricesJob
+    queue: default

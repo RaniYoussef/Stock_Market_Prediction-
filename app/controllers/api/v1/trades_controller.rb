@@ -1,53 +1,66 @@
 class Api::V1::TradesController < ApplicationController
-  before_action :authenticate_user!, only: [:create]  # Only require auth for creating a trade
-  before_action :set_user
+  before_action :authenticate_user!
   before_action :set_company
 
   def create
-    # Initialize the trade object
-    trade = @user.trades.build(trade_params)
+    trade = @current_user.trades.build(trade_params)
     trade.company = @company
-    trade.price_per_stock = @company.stock_price
 
-    total_cost = trade.stock_quantity * trade.price_per_stock
+    # ✅ Get latest prediction or actual
+    prediction = @company.stock_predictions.order(predicted_for: :desc).first
+    price = prediction&.predicted_price || @company.stock_price_histories.order(recorded_at: :desc).first.open
 
-    # Handle Buy transaction: Ensure the user has enough balance
+    return render json: { error: 'No price available' }, status: :unprocessable_entity unless price
+
+    trade.price_per_stock = price
+    # ⏪ Remove: trade.executed_at = Time.current
+
+    total_cost = trade.stock_quantity * price
+
+    unless %w[buy sell].include?(trade.transaction_type)
+      return render json: { error: 'Invalid transaction type' }, status: :unprocessable_entity
+    end
+
     if trade.transaction_type == 'buy'
-      if @user.balance < total_cost
+      if @current_user.balance < total_cost
         return render json: { error: 'Insufficient balance' }, status: :unprocessable_entity
       end
-    end
+      @current_user.balance -= total_cost
 
-    # Handle Sell transaction: Ensure the user has enough stocks
-    if trade.transaction_type == 'sell'
-      bought_stocks = @user.trades.where(company: @company, transaction_type: 'buy').sum(:stock_quantity)
-      sold_stocks  = @user.trades.where(company: @company, transaction_type: 'sell').sum(:stock_quantity)
-      net_stock_balance = bought_stocks - sold_stocks
+    elsif trade.transaction_type == 'sell'
+      total_bought = @current_user.trades.where(company: @company, transaction_type: 'buy').sum(:stock_quantity)
+      total_sold = @current_user.trades.where(company: @company, transaction_type: 'sell').sum(:stock_quantity)
+      owned = total_bought - total_sold
 
-      if net_stock_balance < trade.stock_quantity
-        return render json: { error: 'Insufficient stocks' }, status: :unprocessable_entity
+      if owned < trade.stock_quantity
+        return render json: { error: 'Not enough stocks to sell' }, status: :unprocessable_entity
       end
+
+      @current_user.balance += total_cost
     end
 
-    # Save the trade record and export updated data
-    if trade.save
-      DataExporter.export_all  # 👈 Export after successful trade
-      render json: trade, status: :created
-    else
-      render json: trade.errors, status: :unprocessable_entity
+    ActiveRecord::Base.transaction do
+      @current_user.save!
+      trade.save!
     end
+
+    render json: {
+      trade: trade,
+      prediction_used: {
+        predicted_price: prediction&.predicted_price,
+        trend: prediction&.trend
+      },
+      balance: @current_user.balance
+    }, status: :created
+
+  rescue => e
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
   def set_company
-    @company = Company.find(params[:company_id] || params[:trade][:company_id])
-  rescue ActiveRecord::RecordNotFound
-    render json: { error: 'Company not found' }, status: :not_found
+    @company = Company.find(params[:company_id])
   end
 
   def trade_params

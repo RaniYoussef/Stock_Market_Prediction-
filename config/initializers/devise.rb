@@ -321,6 +321,15 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 1.day.to_i
   end
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], {
+  scope: 'userinfo.email, userinfo.profile',
+  prompt: 'select_account',
+  access_type: 'offline'
+}
+
+  config.mailer = 'CustomDeviseMailer'
+  config.mailer_sender = 'no-reply@yourdomain.com'
+
   
 
 end

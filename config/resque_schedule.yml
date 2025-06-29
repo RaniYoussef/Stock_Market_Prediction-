@@ -1,0 +1,4 @@
+fetch_ai_prediction_job:
+  cron: "*/0.5 * * * * *"  # every 30 seconds, note: true seconds requires rufus-scheduler
+  class: "FetchAiPredictionJob"
+  queue: ai_prediction_queue

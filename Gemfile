@@ -44,8 +44,49 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing framework (RSpec for unit, integration, and controller tests)
+  gem 'rspec-rails'
+
+  # FactoryBot for generating test data
+  gem 'factory_bot_rails'
+
+  # Faker for generating random test data
+  gem 'faker'
+
+  # Shoulda Matchers for common tests on models
+  gem 'shoulda-matchers'
+
+  # Database cleaner for cleaning up the test database
+  gem 'database_cleaner-active_record', group: [:development, :test]
 end
+
+# Production gems (optional)
+group :production do
+  gem 'rails_12factor'  # Heroku support for Rails apps
+end
+
 
 gem "devise", "~> 4.9"
 
 gem "devise-jwt", "~> 0.12.1"
+gem 'rack-cors'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+gem "nokogiri" #scrap prices
+gem 'yahoo-finance'
+gem 'csv', require: 'csv'
+
+gem 'resque'
+gem 'resque-scheduler'
+
+
+group :development do
+  gem 'letter_opener'
+
+end
+

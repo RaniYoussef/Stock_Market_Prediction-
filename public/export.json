@@ -7,12 +7,6 @@
       "role": "user"
     },
     {
-      "id": 2,
-      "email": "nouranyousri03@gmail.com",
-      "balance": "10000.0",
-      "role": "user"
-    },
-    {
       "id": 3,
       "email": "ramiiyousri03@gmail.com",
       "balance": "10000.0",
@@ -25,10 +19,16 @@
       "role": "user"
     },
     {
-      "id": 6,
-      "email": "nouran@yahoo.com",
-      "balance": "0.0",
+      "id": 10,
+      "email": "ziadfahmy@gmail.com",
+      "balance": "10000.0",
       "role": "user"
+    },
+    {
+      "id": 11,
+      "email": "mazenelagamy@gmail.com",
+      "balance": "10000.0",
+      "role": "admin"
     },
     {
       "id": 8,
@@ -37,27 +37,92 @@
       "role": "user"
     },
     {
+      "id": 16,
+      "email": "mazenaly95@gmail.com",
+      "balance": "5000000.0",
+      "role": "user"
+    },
+    {
       "id": 9,
       "email": "raniyoussef@gmail.com",
+      "balance": "9311.46",
+      "role": "user"
+    },
+    {
+      "id": 17,
+      "email": "mohamedelagamy@gmail.com",
+      "balance": "5000000.0",
+      "role": "user"
+    },
+    {
+      "id": 18,
+      "email": "hallajalal@gmail.com",
       "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "email": "nouranyousri03@gmail.com",
+      "balance": "8218.0",
+      "role": "user"
+    },
+    {
+      "id": 19,
+      "email": "dianashams@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 13,
+      "email": "nourantarek@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 14,
+      "email": "mazen@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 15,
+      "email": "marwantareksafina@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "email": "nouran@yahoo.com",
+      "balance": "0.0",
+      "role": "user"
+    },
+    {
+      "id": 12,
+      "email": "gondy@gmail.com",
+      "balance": "9993.6",
       "role": "user"
     }
   ],
   "companies": [
     {
-      "id": 1,
-      "name": "Tesla",
-      "stock_price": "250.5"
+      "id": 5,
+      "name": "CIB Bank",
+      "stock_price": null
     },
     {
-      "id": 2,
-      "name": "testcompany",
-      "stock_price": "10000.0"
+      "id": 1,
+      "name": "Tesla",
+      "stock_price": null
+    },
+    {
+      "id": 6,
+      "name": "Fawry",
+      "stock_price": null
     },
     {
       "id": 3,
       "name": "talaat moustafa",
-      "stock_price": "100.5"
+      "stock_price": null
     }
   ],
   "trades": [
@@ -107,13 +172,49 @@
       "created_at": "2025-04-20T13:09:17.722Z"
     },
     {
-      "id": 6,
-      "user_id": 6,
-      "company_id": 2,
-      "stock_quantity": 1,
-      "price_per_stock": "10000.0",
+      "id": 7,
+      "user_id": 12,
+      "company_id": 5,
+      "stock_quantity": 10,
+      "price_per_stock": "1.6",
       "transaction_type": "buy",
-      "created_at": "2025-04-20T13:10:16.631Z"
+      "created_at": "2025-06-03T20:01:35.943Z"
+    },
+    {
+      "id": 8,
+      "user_id": 12,
+      "company_id": 5,
+      "stock_quantity": 8,
+      "price_per_stock": "1.6",
+      "transaction_type": "sell",
+      "created_at": "2025-06-03T20:03:52.731Z"
+    },
+    {
+      "id": 10,
+      "user_id": 9,
+      "company_id": 1,
+      "stock_quantity": 2,
+      "price_per_stock": "344.27",
+      "transaction_type": "buy",
+      "created_at": "2025-06-04T08:34:01.057Z"
+    },
+    {
+      "id": 11,
+      "user_id": 9,
+      "company_id": 1,
+      "stock_quantity": 1,
+      "price_per_stock": "344.27",
+      "transaction_type": "sell",
+      "created_at": "2025-06-04T08:34:38.118Z"
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "company_id": 5,
+      "stock_quantity": 11,
+      "price_per_stock": "81.0",
+      "transaction_type": "buy",
+      "created_at": "2025-06-04T08:40:32.720Z"
     }
   ]
 }
