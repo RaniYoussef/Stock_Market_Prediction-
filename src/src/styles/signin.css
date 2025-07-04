@@ -1,0 +1,171 @@
+
+.signin-page .sipage-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signin-page .login-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+.signin-page .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.signin-page h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.signin-page p {
+  font-size: 0.95rem;
+  color: #5a5a5a;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  color: #333;
+  margin-top: 15px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dce3f0;
+  outline: none;
+  font-size: 1rem;
+}
+
+.signin-page .forgot-row {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.signin-page .forgot-link {
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signin-page .forgot-link:hover {
+  text-decoration: underline;
+}
+
+.signin-page .signin-btn {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(to right, #6c5ce7, #00c6ff); /* 💎 GRADIENT */
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.signin-page .signin-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 198, 255, 0.35);
+}
+
+.signin-page .bottom-text {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.signin-page .signin-page .bottom-text a {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signin-page .bottom-text a:hover {
+  text-decoration: underline;
+}
+
+.signin-page .or-divider {
+  margin: 20px 0;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.signin-page .social-login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signin-page .social-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.signin-page .google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #dce3f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.signin-page .google-signin-btn:hover {
+  background-color: #f7f7f7;
+}
+
+.signin-page .google-signin-btn img {
+  width: 20px;
+  height: 20px;
+}
+.signin-page .error-text {
+  color: #e63946;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}

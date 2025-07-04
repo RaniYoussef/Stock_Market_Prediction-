@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: Nouran$$
+
+development:
+  <<: *default
+  database: money_money_development
+
+test:
+  <<: *default
+  database: money_money_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: Nouran$$
+  database: money_money_production

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  company: one
+  stock_quantity: 1
+  price_per_stock: 9.99
+  transaction_type: MyString
+
+two:
+  user: two
+  company: two
+  stock_quantity: 1
+  price_per_stock: 9.99
+  transaction_type: MyString

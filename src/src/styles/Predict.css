@@ -1,0 +1,259 @@
+/* Reset base layout */
+.predict-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Container layout */
+.predict-page .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main layout */
+.predict-page .main-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.predict-page .sidebar {
+  width: 260px;
+  background: var(--sidebar-bg);
+  padding: 30px 20px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.predict-page .sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #2c3e50;
+  animation: fadeIn 0.6s ease;
+}
+
+.predict-page .search-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.predict-page .stock-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.predict-page .stock-item {
+  display: flex;
+  align-items: center;
+  background-color: #e6f0ff;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.predict-page .stock-item:hover {
+  background-color: #d2e7ff;
+  transform: translateX(2px);
+}
+
+.predict-page .stock-logo {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+}
+
+/* Content Area */
+.predict-page .content-area {
+  flex: 1;
+  padding: 40px 50px;
+  background-color: #95b9ee;
+  overflow-y: auto;
+}
+.predict-page .content-area p {
+  color: var(--text);
+}
+
+.predict-page .placeholder {
+  text-align: center;
+  margin-top: 15%;
+  color: #444;
+}
+
+.predict-page .prediction-box {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+/* Time Range Buttons */
+.predict-page .range-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.predict-page .range-buttons button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background-color: #f3f7ff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.predict-page .range-buttons button:hover {
+  background-color: #e2ecff;
+}
+
+.predict-page .range-buttons .active {
+  background-color: #2d80ff;
+  color: white;
+  font-weight: 600;
+  border-color: #2d80ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark Mode */
+.predict-page.dark {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.predict-page .app.dark .navbar,
+.predict-page .app.dark footer {
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.predict-page .app.dark .toggle-theme {
+  background-color: #333;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+.predict-page .app.dark .toggle-theme:hover {
+  background-color: #444;
+}
+
+.predict-page .app.dark .content-area {
+  background-color: #181818;
+}
+
+.predict-page .app.dark .sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.predict-page .app.dark .sidebar h2 {
+  color: #ffffff;
+}
+
+.predict-page .app.dark .stock-item {
+  background-color: #3b3b3b;
+}
+
+.predict-page .app.dark .stock-item:hover {
+  background-color: #505050;
+}
+
+.predict-page .app.dark .prediction-box {
+  background-color: #2d2d2d;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.predict-page .app.dark .range-buttons button {
+  background-color: #444;
+  color: #ddd;
+}
+
+.predict-page .app.dark .range-buttons .active {
+  background-color: #16a085;
+  border-color: #16a085;
+  color: #fff;
+}
+
+.trade-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.buy-button, .sell-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buy-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.sell-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.buy-button:hover {
+  background-color: #218838;
+}
+
+.sell-button:hover {
+  background-color: #c82333;
+}
+
+/* Chart Styling */
+.predict-page .chart-container {
+  margin-top: 20px;
+}
+
+.recharts-wrapper {
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-line[data-key="open"] {
+  stroke: #007bff !important;
+  stroke-width: 2.5;
+}
+
+/* Predicted Data Line - Red */
+.recharts-line[data-key="predicted_open_price"] {
+  stroke: #ff0000 !important;
+  stroke-width: 2.5;
+}

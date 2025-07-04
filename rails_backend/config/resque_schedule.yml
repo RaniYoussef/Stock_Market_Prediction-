@@ -1,0 +1,4 @@
+fetch_ai_prediction_job:
+  cron: "* * * * *" # every minute
+  class: "FetchAiPredictionJob"
+  queue: ai_prediction_queue

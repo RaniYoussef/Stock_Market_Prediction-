@@ -1,0 +1,63 @@
+/* Align center logo + dark mode top-right */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #e1ebfb, #eaeaea, #cce0f7);
+  box-shadow: 0 1px 4px var(--shadow);
+  z-index: 100;
+}
+
+.navbar.dark {
+  background: linear-gradient(to right, #1f1f1f, #2c2c2c);
+}
+
+/* Left: EGSMP name */
+.nav-left .brand-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Center: Logo */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo2 {
+  height: 48px;
+}
+
+/* Right: Dark mode button */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-theme {
+  background: #e8f0fa;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.toggle-theme:hover {
+  background: #d6e6f7;
+}
+
+.dark .toggle-theme:hover {
+  background-color: #444;
+}
+.dark .brand-name {
+  color: white;
+}

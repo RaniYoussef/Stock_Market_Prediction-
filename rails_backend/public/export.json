@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "hallajalal@gmail.com",
+      "balance": "10000.0",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "email": "rani@gmail.com",
+      "balance": "10000.0",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "email": "raniyoussef2020@gmail.com",
+      "balance": "5000000.0",
+      "role": "user"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "CIB Bank",
+      "stock_price": null
+    },
+    {
+      "id": 2,
+      "name": "CIB",
+      "stock_price": null
+    }
+  ],
+  "trades": []
+}
